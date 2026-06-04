@@ -1,6 +1,5 @@
 // import { SplashScreen } from '../components/SplashScreen'
 import { Header } from '../components/Header/Header'
-import { Hero7 } from '../components/Hero7'
 import { Hero2Section } from '../components/Hero2Section'
 import { Hero3Section } from '../components/Hero3Section'
 import { Hero4Section } from '../components/Hero4Section'
@@ -16,7 +15,6 @@ export function HomePage() {
       {/* <SplashScreen /> */}
       <Header />
       <main>
-        <Hero7 />
         <Hero2Section />
         <Hero3Section />
         <Hero4Section />

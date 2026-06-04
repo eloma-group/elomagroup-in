@@ -58,8 +58,8 @@ function FloatingShape({ shape, progress, reduce }: {
   const y       = useTransform(progress, [0, 1], [0, reduce ? 0 : shape.drift])
   const rot     = useTransform(progress, [0, 1], [shape.rotate, reduce ? shape.rotate : shape.rotate + 10])
   const scale   = useTransform(progress, [0.12, 0.6, 1], [0.7, reduce ? 1 : shape.grow, shape.grow])
-  // subtle behind the manifesto → bold mid-scroll → fade out as the hero exits
-  const opacity = useTransform(progress, [0, 0.12, 0.55, 0.85, 1], [0.32, 0.62, 1, 1, 0])
+  // subtle behind the manifesto → bold mid-scroll → stay full so they carry into the folder
+  const opacity = useTransform(progress, [0, 0.12, 0.55, 1], [0.32, 0.62, 1, 1])
 
   if (shape.kind === 'triangle') {
     return (
@@ -177,6 +177,14 @@ export function OurWorld() {
 
       {/* Static folder — always visible below the hero, animates on hover only */}
       <div className="ow-folder-section">
+        {/* Ambient 3D cards so the folder lives in the same world as the hero */}
+        <div className="ow-fsbg" aria-hidden>
+          <span className="ow-fs-shape ow-fs-1" />
+          <span className="ow-fs-shape ow-fs-2" />
+          <span className="ow-fs-shape ow-fs-3" />
+          <span className="ow-fs-shape ow-fs-4" />
+          <span className="ow-fs-shape ow-fs-5" />
+        </div>
         <a
           href="#our-businesses"
           onClick={goToBusinesses}
@@ -278,12 +286,56 @@ export function OurWorld() {
 
         /* ── 3D folder — static section below the hero ───────── */
         .ow-folder-section {
-          position: relative; z-index: 1;
+          position: relative; z-index: 1; overflow: hidden;
           min-height: 92vh;
           display: flex; align-items: center; justify-content: center;
           padding: clamp(56px, 9vw, 120px) clamp(24px, 4vw, 64px) clamp(80px, 11vw, 150px);
         }
+
+        /* Ambient floating cards that frame the folder */
+        .ow-fsbg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+        .ow-fs-shape { position: absolute; display: block; will-change: transform; }
+        .ow-fs-1 {
+          width: clamp(220px, 26vw, 440px); aspect-ratio: 1; border-radius: 50%;
+          top: -9%; left: -7%; background: ${SILVER}; opacity: 0.75;
+          box-shadow: 0 40px 80px rgba(26,43,60,0.14), inset 0 3px 4px rgba(255,255,255,0.9);
+          animation: ow-fs-float-a 15s ease-in-out infinite;
+        }
+        .ow-fs-2 {
+          width: clamp(200px, 24vw, 400px); aspect-ratio: 1.7 / 1; border-radius: 999px;
+          bottom: -8%; right: -5%; background: ${SILVER}; opacity: 0.7;
+          box-shadow: 0 40px 80px rgba(26,43,60,0.14), inset 0 3px 4px rgba(255,255,255,0.9);
+          animation: ow-fs-float-b 17s ease-in-out infinite;
+        }
+        .ow-fs-3 {
+          width: clamp(64px, 7.5vw, 120px); aspect-ratio: 1; border-radius: 50%;
+          top: 16%; right: 11%; background: ${GREEN_G}; opacity: 0.92;
+          box-shadow: 0 22px 48px rgba(60,185,140,0.30);
+          animation: ow-fs-float-a 11s ease-in-out infinite;
+        }
+        .ow-fs-4 {
+          width: clamp(96px, 11vw, 168px); aspect-ratio: 2.3 / 1; border-radius: 999px;
+          bottom: 17%; left: 8%; background: ${NAVY_G}; opacity: 0.85;
+          box-shadow: 0 22px 48px rgba(26,43,60,0.30);
+          animation: ow-fs-float-b 13s ease-in-out infinite;
+        }
+        .ow-fs-5 {
+          width: clamp(120px, 14vw, 230px); aspect-ratio: 1; border-radius: 50%;
+          top: 32%; left: 5%; background: ${SILVER}; opacity: 0.5;
+          box-shadow: 0 34px 70px rgba(26,43,60,0.12);
+          animation: ow-fs-float-a 19s ease-in-out infinite;
+        }
+        @keyframes ow-fs-float-a {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50%      { transform: translateY(-24px) rotate(4deg); }
+        }
+        @keyframes ow-fs-float-b {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50%      { transform: translateY(20px) rotate(-3deg); }
+        }
+
         .ow-folder-wrap {
+          position: relative; z-index: 1;
           display: flex; flex-direction: column; align-items: center;
           gap: clamp(20px, 2.4vw, 34px);
           text-decoration: none; cursor: pointer;
