@@ -308,39 +308,20 @@ export function EgCompanies() {
           mask: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 60%);
         }
         .eg-oc-reflect {
-          display: block; width: 100%; height: 100%; transform: scaleY(-1); filter: blur(0.6px);
-          background: linear-gradient(150deg, #fff7de, ${GOLD} 46%, ${GOLD_DEEP});
-          -webkit-mask: url(${LOGO}) center / contain no-repeat;
-          mask: url(${LOGO}) center / contain no-repeat;
+          display: block; width: 100%; height: 100%; object-fit: contain;
+          transform: scaleY(-1); filter: blur(0.6px);
         }
         .eg-oc-logo {
           position: relative; z-index: 2; width: clamp(96px, 9vw, 148px); aspect-ratio: 1;
-          -webkit-mask: url(${LOGO}) center / contain no-repeat;
-          mask: url(${LOGO}) center / contain no-repeat;
-          filter:
-            drop-shadow(0 1px 0 rgba(255,247,214,0.9))
-            drop-shadow(0 -1px 0 rgba(120,86,16,0.45))
-            drop-shadow(0 10px 20px rgba(150,110,20,0.42));
+          filter: drop-shadow(0 10px 20px rgba(19,41,61,0.26));
           will-change: transform; animation: eg-oc-breathe 6.5s ease-in-out infinite;
         }
         @keyframes eg-oc-breathe {
           0%, 100% { transform: translateY(0) scale(1); }
           50% { transform: translateY(-5px) scale(1.02); }
         }
-        .eg-oc-logo-fill {
-          position: absolute; inset: 0;
-          background:
-            linear-gradient(150deg, #fff7de 4%, ${GOLD_HI} 18%, ${GOLD} 40%, ${GOLD_MID} 58%, ${GOLD_DEEP} 74%, #6b501e 88%, ${GOLD} 100%);
-        }
-        .eg-oc-logo-shine {
-          position: absolute; top: -30%; bottom: -30%; left: -60%; width: 42%;
-          background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.85) 50%, transparent 70%);
-          transform: translateX(0) skewX(-12deg); will-change: transform;
-          animation: eg-oc-shine 5.5s ease-in-out infinite;
-        }
-        @keyframes eg-oc-shine {
-          0% { transform: translateX(0) skewX(-12deg); }
-          55%, 100% { transform: translateX(560%) skewX(-12deg); }
+        .eg-oc-logo-img {
+          width: 100%; height: 100%; object-fit: contain; display: block;
         }
         .eg-oc-brand-name {
           font-family: 'Poppins', sans-serif; font-weight: 800; text-transform: uppercase;
@@ -483,7 +464,7 @@ export function EgCompanies() {
 
         @media (prefers-reduced-motion: reduce) {
           .eg-oc-sheen, .eg-oc-glow, .eg-oc-mesh,
-          .eg-oc-logo, .eg-oc-logo-shine { animation: none; }
+          .eg-oc-logo { animation: none; }
           .eg-oc-inner, .eg-oc-img, .eg-oc-go { transition: none; }
         }
       `}</style>
@@ -550,11 +531,24 @@ export function EgCompanies() {
               <div className="eg-oc-crest">
                 <span className="eg-oc-crest-ring" aria-hidden />
                 <div className="eg-oc-logo">
-                  <span className="eg-oc-logo-fill" />
-                  <span className="eg-oc-logo-shine" />
+                  <img
+                    className="eg-oc-logo-img"
+                    src={LOGO}
+                    alt="Eloma Group"
+                    width={148}
+                    height={148}
+                    decoding="async"
+                  />
                 </div>
                 <span className="eg-oc-reflect-wrap" aria-hidden>
-                  <span className="eg-oc-reflect" />
+                  <img
+                    className="eg-oc-reflect"
+                    src={LOGO}
+                    alt=""
+                    width={148}
+                    height={148}
+                    decoding="async"
+                  />
                 </span>
               </div>
               <div className="eg-oc-brand">

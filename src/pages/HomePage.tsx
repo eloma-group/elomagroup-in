@@ -8,7 +8,6 @@ import { EgCompanies }    from '../components/home/EgCompanies'
 import { EgLife }         from '../components/home/EgLife'
 import { EgAbout }        from '../components/home/EgAbout'
 import { EgWhyExist }     from '../components/home/EgWhyExist'
-import { EgCapabilities } from '../components/home/EgCapabilities'
 import { EgFoundation }   from '../components/home/EgFoundation'
 
 export function HomePage() {
@@ -25,7 +24,6 @@ export function HomePage() {
         <EgLife />
         <EgAbout />
         <EgWhyExist />
-        <EgCapabilities />
       </main>
       <FlyFooter />
     </div>
