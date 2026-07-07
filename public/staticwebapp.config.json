@@ -1,0 +1,24 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/assets/*",
+      "/images/*",
+      "/partners/*",
+      "/*.{png,jpg,jpeg,gif,svg,ico,webp,avif}",
+      "/*.{mp4,webm}",
+      "/*.{css,js,json,txt,xml,woff,woff2,ttf,eot}"
+    ]
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".webm": "video/webm",
+    ".mp4": "video/mp4"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  }
+}
