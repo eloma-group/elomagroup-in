@@ -25,12 +25,12 @@ export function EgAbout() {
         .eg-ab-inner { width: 100%; max-width: none; margin: 0 auto; }
         .eg-ab-eyebrow {
           text-align: center; font-family:'Poppins',sans-serif; font-weight:700; text-transform:uppercase;
-          font-size: clamp(16px,2vw,26px); color:${GREEN}; letter-spacing:0.08em; margin: 0;
+          font-size: clamp(16px,2vw,26px); color:#000; letter-spacing:0.08em; margin: 0;
         }
         .eg-ab-tag { text-align:center; font-family:'Inter',sans-serif; font-size:clamp(11px,0.9vw,13px); letter-spacing:3px; text-transform:uppercase; color:${MUTED}; margin: 10px 0 clamp(6px,1.5vw,16px); }
         .eg-ab-script {
           text-align:center; font-family:'Dancing Script', cursive; font-weight:700;
-          font-size: clamp(44px, 8vw, 104px); color:${GREEN}; line-height:1; margin: 0 0 clamp(36px,5vw,60px);
+          font-size: clamp(44px, 8vw, 104px); color:#717C86; line-height:1; margin: 0 0 clamp(36px,5vw,60px);
         }
         .eg-ab-grid { display:grid; grid-template-columns: 1fr 1fr; gap: clamp(28px,4vw,64px); align-items:center; }
 
@@ -74,15 +74,15 @@ export function EgAbout() {
           content:''; position:absolute; left:-4%; right:-4%; top:50%;
           height: clamp(64px, 8vw, 120px); transform: translateY(-50%) rotate(var(--tilt));
           background: linear-gradient(180deg,
-            rgba(60,185,140,0) 0%, rgba(60,185,140,0.05) 32%,
-            rgba(60,185,140,0.17) 50%, rgba(60,185,140,0.05) 68%, rgba(60,185,140,0) 100%);
+            rgba(139,147,159,0) 0%, rgba(139,147,159,0.05) 32%,
+            rgba(139,147,159,0.17) 50%, rgba(139,147,159,0.05) 68%, rgba(139,147,159,0) 100%);
         }
-        .eg-diag::after { /* crisp mint edge line along the diagonal */
+        .eg-diag::after { /* crisp grey edge line along the diagonal */
           content:''; position:absolute; left:-4%; right:-4%; top:50%; height:1.6px;
           transform: translateY(-50%) rotate(var(--tilt));
           background: linear-gradient(90deg,
-            rgba(60,185,140,0) 0%, rgba(60,185,140,0.42) 18%,
-            rgba(60,185,140,0.72) 50%, rgba(60,185,140,0.42) 82%, rgba(60,185,140,0) 100%);
+            rgba(139,147,159,0) 0%, rgba(139,147,159,0.42) 18%,
+            rgba(139,147,159,0.72) 50%, rgba(139,147,159,0.42) 82%, rgba(139,147,159,0) 100%);
         }
 
         /* ── founder block ── */

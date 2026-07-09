@@ -484,17 +484,18 @@ export function EgBusinesses() {
           align-self: flex-start; margin-top: clamp(18px, 1.9vw, 28px);
           display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
           font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: 0.6px;
-          font-size: clamp(11px, 0.82vw, 13px); text-transform: uppercase; color: #3a2f1c;
+          font-size: clamp(11px, 0.82vw, 13px); text-transform: uppercase; color: #B0894A;
           padding: clamp(11px, 0.95vw, 15px) clamp(18px, 1.5vw, 26px);
-          min-height: 44px; border: 1px solid rgba(150,120,70,0.35); border-radius: 8px;
-          background: linear-gradient(150deg, #ddc79d, #c8ac78);
-          box-shadow: 0 10px 20px -12px rgba(120,95,50,0.6), inset 0 1px 0 rgba(255,255,255,0.5);
-          transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+          min-height: 44px; border: 1.5px solid rgba(176,137,74,0.55); border-radius: 8px;
+          background: none;
+          transition: background .4s ease, color .4s ease, border-color .4s ease, box-shadow .4s ease;
         }
-        .egb-cta svg { width: 15px; height: 15px; transition: transform 0.25s ease; }
-        .egb-cta:hover { transform: translateY(-2px); background: linear-gradient(150deg, #e2cea6, #ceb480);
-          box-shadow: 0 16px 26px -12px rgba(120,95,50,0.65); }
-        .egb-cta:hover svg { transform: translateX(3px); }
+        .egb-cta svg { width: 15px; height: 15px; transition: transform .4s cubic-bezier(0.16,1,0.3,1); }
+        .egb-cta:hover {
+          background: #B0894A; color: #fff; border-color: #B0894A;
+          box-shadow: 0 16px 30px -12px rgba(176,137,74,0.55);
+        }
+        .egb-cta:hover svg { transform: translateX(6px); }
 
         /* supply chain split layout with map illustration */
         .egb-supply { display: flex; align-items: center; gap: clamp(18px, 3vw, 48px); height: 100%; }

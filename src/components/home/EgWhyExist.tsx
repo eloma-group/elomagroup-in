@@ -49,7 +49,7 @@ export function EgWhyExist() {
         }
         .eg-wy-inner { position:relative; z-index:2; max-width: none; margin:0 auto; padding: clamp(56px,8vw,120px) clamp(24px,5vw,80px); }
         .eg-wy-head { text-align:center; margin-bottom: clamp(36px,5vw,60px); }
-        .eg-wy-title { font-family:'Poppins',sans-serif; font-weight:700; text-transform:uppercase; font-size:clamp(26px,3.4vw,46px); color:${GREEN}; margin:0; letter-spacing:0.04em; }
+        .eg-wy-title { font-family:'Poppins',sans-serif; font-weight:700; text-transform:uppercase; font-size:clamp(26px,3.4vw,46px); color:#000; margin:0; letter-spacing:0.04em; }
         .eg-wy-sub { font-family:'Inter',sans-serif; font-size:clamp(11px,0.9vw,13px); letter-spacing:3px; text-transform:uppercase; color:rgba(19,41,61,0.55); margin:12px 0 0; }
         .eg-wy-rule { display:block; width:clamp(150px,18vw,250px); height:2px; margin:clamp(14px,2vw,22px) auto 0; position:relative;
           background: linear-gradient(90deg, rgba(19,41,61,0) 0%, rgba(19,41,61,0.18) 28%, rgba(19,41,61,0.18) 72%, rgba(19,41,61,0) 100%); }
@@ -139,22 +139,19 @@ export function EgWhyExist() {
         .eg-wy-panel:hover .eg-wy-panel-logo img { transform: scale(1.06) rotate(2deg); }
         .eg-wy-panel-p { font-family:'Inter',sans-serif; font-size:clamp(14px,1.18vw,18px); line-height:1.78; color:rgba(19,41,61,0.82); margin: clamp(20px,3vw,32px) 0 auto; }
         .eg-wy-btn {
-          position: relative; overflow: hidden;
-          display:inline-flex; align-items:center; gap:10px; align-self:flex-start; margin-top: clamp(24px,3vw,32px);
-          min-height:48px; padding: 13px 26px; border:none; border-radius:12px; cursor:pointer;
-          background:${GREEN}; color:#fff; font-family:'Poppins',sans-serif; font-weight:500; font-size:clamp(14px,1vw,16px);
-          box-shadow:0 14px 30px -12px rgba(60,185,140,0.7); transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+          display:inline-flex; align-items:center; gap:14px; align-self:flex-start; margin-top: clamp(24px,3vw,32px);
+          cursor:pointer; font-family:'Poppins',sans-serif; font-weight:700; letter-spacing:1.5px;
+          text-transform:uppercase; font-size:clamp(12px,0.9vw,13px); color:#000;
+          background:none; border:1.5px solid #fff; border-radius:8px;
+          padding: clamp(14px,1.4vw,18px) clamp(22px,2vw,30px);
+          transition: background .4s ease, color .4s ease, border-color .4s ease, box-shadow .4s ease;
         }
-        .eg-wy-btn:hover { transform: translateY(-2px); background:#34ab80; box-shadow:0 20px 38px -12px rgba(60,185,140,0.8); }
-        /* light sweep across the button */
-        .eg-wy-btn::after {
-          content:''; position:absolute; top:0; left:-120%; width:55%; height:100%;
-          background:linear-gradient(110deg, transparent, rgba(255,255,255,0.4), transparent);
-          transform: skewX(-18deg); transition: left 0.7s cubic-bezier(0.16,1,0.3,1); pointer-events:none;
+        .eg-wy-btn:hover {
+          background:#B0894A; color:#fff; border-color:#B0894A;
+          box-shadow: 0 16px 30px -12px rgba(176,137,74,0.55);
         }
-        .eg-wy-btn:hover::after { left:135%; }
-        .eg-wy-btn span.circ { position:relative; width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
-        .eg-wy-btn:hover span.circ { transform: translateX(3px); }
+        .eg-wy-btn span.circ { position:relative; width:26px; height:26px; border-radius:50%; background:rgba(176,137,74,0.14); display:flex; align-items:center; justify-content:center; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), background 0.4s ease; }
+        .eg-wy-btn:hover span.circ { transform: translateX(6px); background:rgba(255,255,255,0.25); }
 
         @media (max-width: 1023px) { .eg-wy-grid { grid-template-columns: 1fr; } }
         @media (max-width: 560px) { .eg-wy-cards { grid-template-columns: 1fr; } }

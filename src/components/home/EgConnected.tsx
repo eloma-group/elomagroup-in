@@ -71,7 +71,7 @@ export function EgConnected() {
         @keyframes cgp { 0%,100%{box-shadow:0 0 0 0 rgba(60,185,140,0.5);} 50%{box-shadow:0 0 0 7px rgba(60,185,140,0);} }
         .cg-h { font-family:'Poppins',sans-serif; font-weight:600; letter-spacing:-0.03em; line-height:1.05;
           font-size:clamp(30px,4vw,60px); color:${INK}; margin:clamp(16px,2vw,24px) 0 0; }
-        .cg-h em { color:${GREEN}; font-style:normal; }
+        .cg-h em { color:#8B939F; font-style:normal; }
         .cg-p { font-family:'Inter',sans-serif; font-size:clamp(14px,1.05vw,17px); line-height:1.7; color:${MUTED}; margin:clamp(14px,1.6vw,20px) auto 0; max-width:54ch; }
 
         .cg-map { position:relative; margin:clamp(8px,2vw,28px) auto 0; max-width:1280px; }
